@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="githubApp">
+<head>
+    <title>Github Issue Manager</title>
+	<!-- build:css css/gim.css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<!-- endbuild -->
+	
+	<!-- build:js js/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/oauth-js/dist/oauth.min.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	
+	<!-- build:js js/gim.js -->
+    <script src="scripts/angular.js"></script>		
+    <script src="app/app.js"></script>
+    <script src="app/issue/controllers.js"></script>
+    <script src="app/issue/services.js"></script>
+	<!-- endbuild -->
+    <style>
+        .container {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #results .row {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" ng-controller="GithubController">
+		<div class="row">
+			<h1 style="display:inline-block">Github Issue Manager</h1>
+			<button ng-click="signOut()" id="signOut" type="button" class="btn btn-link" style="display:none;">Sign Out</button>
+		</div>
+        <div class="row">
+            <div class="col-xs-12">
+				<div class="col-xs-2" style="padding-left: 0px">
+					<button ng-click="connectButton()" id="connectButton" type="button" class="btn btn-primary">Connect Github</button>
+					<button ng-click="refreshTimeline($scope.SearchOption)" id="getTimelineButton" type="button" class="btn btn-info" style="display:none;">Get My Timeline</button>
+				</div>
+				<div class="col-xs-9">
+					<!--<label class="checkbox-inline">
+						<div class="checkbox"><input type="checkbox" ng-model="createdByUser">Created by me</div>
+					</label>
+					<label class="checkbox-inline">
+						<div class="checkbox"><input type="checkbox" ng-model="inRepos">In your repos</div>
+					</label>-->
+				</div>
+				<div class="col-xs-1" style="padding-right: 0px">
+					<select class="btn btn-info" ng-model="SearchOption" id="selectSearchOption" style="display:none; ">
+						<option >Latest</option>
+						<option >Oldest</option>
+						<option >Open</option>
+					</select>
+				</div>
+			</div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12" id="results">
+				<div class="row" ng-repeat="t in issues">
+					<div class="col-xs-1 col-sm-1" style="padding-top: 3px">
+						<div type="button" class="btn btn-default" ng-class="{'btn-danger':t.state==='open','btn-success':t.state ==='closed'}">
+						  <span ng-class="{'glyphicon glyphicon-lock': t.state==='closed', 'glyphicon glyphicon-exclamation-sign': t.state==='open'}"></span>
+						</div>
+					</div>
+					<div class="col-xs-11 col-sm-11" ng-class="{'bg-danger':t.state==='open', 'bg-success':t.state==='closed'}">
+						<a href="{{t.html_url}}">{{t.title}}</a><br><small>{{t.created_at}}</small>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
