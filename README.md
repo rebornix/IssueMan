@@ -1,5 +1,5 @@
 # Issue Man
-Github Issue Manager helps you control all issues that created by you. Check out a simple [demo](issueman.azurewebsites.net) which is good enough for me.
+Github Issue Manager helps you control all issues that created by you. Check out a simple [demo](http://issueman.azurewebsites.net) which is good enough for me.
 
 # Get involved in development
 ## Setup env
