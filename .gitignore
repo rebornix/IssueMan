@@ -181,21 +181,8 @@ DeployConfig.json
 # Deployment Git repository.
 *.git/
 
-
-# Test result folder.
-result/
-
-# Gitbook site files.
-_book/
-
 # WebStorm configurations.
 /.idea
 
 # sublime workspace file
 sublime.sublime-workspace
-
-# Site Clone folder.
-capsweb-devint-wus/
-capsweb-devint-eas/
-clixweb/
-capsweb/
