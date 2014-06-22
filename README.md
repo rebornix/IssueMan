@@ -1,18 +1,17 @@
 # Issue Man
-Github Issue Manager helps you control all issues that created by you. Check out a simple [demo](issueman.azurewebsites.net)
+Github Issue Manager helps you control all issues that created by you. Check out a simple [demo](issueman.azurewebsites.net) which is good enough for me.
 
 # Get involved in development
 ## Setup env
 - install *git* and clone the appropriate branch
  - ```git clone --branch master https://github.com/rebornix/IssueMan.git issueman```
 - install *node*
-- launch terminal and install the following packages in the global space: *grunt-cli*, *bower* and *protractor*
+- launch terminal and install the following packages in the global space: *grunt-cli*, *bower*
  - `npm install -g grunt-cli`
  - `npm install -g bower`
- - `npm install -g protractor`
 - inside the local folder of source repositry run *npm* to install everything we need
  - `npm install`
-- done. now you can run grunt tasks and do development as usual.
+- You can run grunt tasks and do development as usual.
 
 ### Grunt task
 - `grunt dev`
