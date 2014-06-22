@@ -9,10 +9,6 @@ exports.init = function (grunt) {
         var branchName = exec('git rev-parse --abbrev-ref HEAD 2>/dev/null', { silent: true })
                             .output.replace(/\n$/, '');
 
-        // Here we pass the option as a workaround for deployment.
-        // We intended to get the branch name by above git command.
-        // However, in TFS Build 2013, CI of GIT will cause the repository in detached head mode,
-        // where branch name is always 'HEAD'.
         branchName = grunt.option('branchName') || branchName;
 
         if (!branchName) {
