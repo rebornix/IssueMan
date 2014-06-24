@@ -1,4 +1,4 @@
-# Issue Man ![Build Status](https://travis-ci.org/rebornix/IssueMan.svg?branch=master)
+# Issue Man ![Build Status](https://travis-ci.org/rebornix/IssueMan.svg?branch=master) ![Dependence](https://david-dm.org/rebornix/IssueMan.png)
 Github Issue Manager helps you control all issues that created by you. Check out a simple [demo](http://issueman.azurewebsites.net) which is good enough for me.
 
 # Get involved in development
